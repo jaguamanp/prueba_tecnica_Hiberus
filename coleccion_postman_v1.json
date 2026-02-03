@@ -1,0 +1,79 @@
+{
+  "info": {
+    "_postman_id": "12345678-abcd-efgh-ijkl-1234567890ab",
+    "name": "Prueba técnica API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Colección para probar la API de la prueba técnica (Symfony Backend)"
+  },
+  "item": [
+    {
+      "name": "Listar productos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8001/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8001",
+          "path": ["products"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ver un producto",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8001/products/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8001",
+          "path": ["products", "1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear un pedido",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customer_id\": \"12345\",\n  \"subtotal\": 149.99,\n  \"tax\": 12.00,\n  \"shipping\": 5.00,\n  \"total\": 166.99,\n  \"status\": \"pending\",\n  \"order_items\": [\n    {\"product_id\": 1, \"quantity\": 1, \"unit_price\": 149.99, \"subtotal\": 149.99}\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8001/orders",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8001",
+          "path": ["orders"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar pedidos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8001/orders",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8001",
+          "path": ["orders"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

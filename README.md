@@ -21,6 +21,7 @@ Este proyecto es una aplicación web de ejemplo que combina **Symfony (backend) 
 │   └── init.sql            # Creación de tablas + inserts de productos
 ├── docker-compose.yml      # Docker Compose para levantar todo
 └── README.md
+└── coleccion_postman_v1.json
 ```
 
 ---
@@ -124,6 +125,33 @@ docker-compose down
 ```bash
 docker-compose up -d --build
 ```
+
+##  Pruebas unitarias (PHPUnit)
+Ejecutar pruebas en local
+```bash
+cd backend
+composer install
+php bin/phpunit
+```
+
+
+## Colección de Postman
+
+Archivo: coleccion_postman_v1.json
+
+- Abrir Postman → Import → File → coleccion_postman_v1.json
+
+Configurar variable base_url como http://localhost:8001
+
+Endpoints principales:
+
+- GET /products → Listar productos
+
+- GET /products/{id} → Obtener producto por ID
+
+- POST /orders → Crear una orden
+
+- GET /orders/{id} → Consultar orden por ID
 
 ---
 
